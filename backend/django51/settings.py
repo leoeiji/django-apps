@@ -83,15 +83,14 @@ WSGI_APPLICATION = "django51.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-print("aaaaaaaaaaaaaaaaaaaaa", os.environ.get("MYSQL_USER"))
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("MYSQL_DB"),
-        'USER': os.environ.get("MYSQL_USER"),
-        'PASSWORD': os.environ.get("MYSQL_ROOT_PASSWORD"),
-        'HOST': '127.0.0.1',
-        'PORT': '3307',
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "db",
+        "USER": "root",
+        "PASSWORD": "admin",
+        "HOST": "db",
+        "PORT": "3306",
     }
 }
 
