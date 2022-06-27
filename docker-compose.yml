@@ -15,6 +15,7 @@ services:
       - "25565:25565"
     volumes:
       - ./nginx:/etc/nginx/conf.d
+      - ./backend/static_root:/usr/src/app/static_root
     depends_on:
       - db
       - frontend
