@@ -6,6 +6,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=admin
       - MYSQL_DATABASE=db
+    volumes:
+      - ./databases:/var/lib/mysql
 
   nginx:
     image: nginx:1.13
@@ -13,14 +15,10 @@ services:
       - "80:80"
     volumes:
       - ./nginx:/etc/nginx/conf.d
-      - static:/usr/src/app/static_root
-      - media:/usr/src/app/media
     depends_on:
       - db
       - frontend
       - backend
 
 volumes:
-  static:
-  media:
-  pgdata:
+  databases:
