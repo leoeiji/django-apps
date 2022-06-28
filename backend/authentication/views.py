@@ -32,4 +32,4 @@ class GroupViewSet(viewsets.ModelViewSet):
 @permission_classes([permissions.AllowAny])
 def teste(r: Request):
     print(r.query_params)
-    return Response({"TESTE": 2222})
+    return Response({"TESTE": 888888})

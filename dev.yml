@@ -11,8 +11,10 @@ services:
     environment:
       - MYSQL_DB=db
       - MYSQL_USER=root
-      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_HOST=db
+      - DJANGO_DEBUG=True
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
     volumes:
       - ./backend:/usr/src/app
       - ./backend:/code
